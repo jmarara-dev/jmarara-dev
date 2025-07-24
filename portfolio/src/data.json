@@ -1,0 +1,61 @@
+{
+
+
+  "perfil": {
+    "usuario": "jmarara-dev",
+    "nombre": "José Martín Arance",
+    "titulo": "Desarrollador de aplicaciones multiplataforma",
+    "descripcion": "¡Hola! Soy José Martín Arance, desarrollador de aplicaciones multiplataforma apasionado por crear soluciones útiles que realmente resuelvan necesidades personales y sociales. Me motiva ver cómo una idea se convierte en una aplicación funcional y aporta valor a quienes la usan. Disfruto especialmente el reto de buscar soluciones creativas y anticiparme a problemas que puedan surgir, aplicando pensamiento lateral en cada proyecto.\n\nMe interesa trabajar en proyectos que tengan impacto, y aunque mi meta a futuro es investigar el desarrollo de videojuegos, actualmente me enfoco en aplicaciones prácticas y colaboraciones que me permitan seguir aprendiendo y creciendo profesionalmente.\n\nBusco oportunidades laborales y colaboraciones que enriquezcan mi experiencia, porque sé que el aprendizaje es constante y nadie nace sabiendo.\n\nComo logro destacado, fui miembro del equipo Fuerzaerea del IES Oretania en el evento Newton3, donde obtuvimos el primer puesto en la modalidad de vuelo programado. Mi aportación fue desarrollar el código en Python usando el SDK de Tello para drones.\n\nSi buscas a alguien comprometido, creativo y con ganas de aportar, ¡hablemos!"
+  },
+
+
+
+  "experiencia": [
+    {
+      "empresa": "Tech Solutions",
+      "puesto": "Frontend Developer",
+      "periodo": "2022 - Presente",
+      "descripcion": "Desarrollo de aplicaciones web modernas y accesibles."
+    }
+  ],
+
+
+
+  "estudios": [
+    {
+      "institucion": "Universidad Nacional",
+      "titulo": "Ingeniería en Sistemas",
+      "periodo": "2018 - 2022"
+    }
+  ],
+
+
+
+  "proyectos": [
+    {
+      "nombre": "Mi Portafolio",
+      "descripcion": "Sitio web personal para mostrar experiencia y proyectos.",
+      "url": "https://github.com/jmarara-dev/portfolio",
+      "imagen": "react.svg"
+    },
+
+    {
+      "nombre": "App de Tareas",
+      "descripcion": "Aplicación para gestionar tareas diarias.",
+      "url": "https://github.com/jmarara-dev/todo-app"
+    }
+  ],
+
+
+
+  "contacto": {
+    "email": "jmarara.dev@gmail.com"
+  },
+
+
+
+  "redes": {
+    "linkedin": "https://linkedin.com/in/jmartinar",
+    "github": "https://github.com/jmarara-dev"
+  }
+}
