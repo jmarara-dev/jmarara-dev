@@ -92,16 +92,16 @@
 
   "proyectos": [
     {
-      "nombre": "Mi Portafolio",
-      "descripcion": "Sitio web personal para mostrar experiencia y proyectos.",
-      "url": "https://github.com/jmarara-dev/portfolio",
+      "nombre": "wordhub",
+      "descripcion": "Red social primitiva de solo texto.(Proyecto de instituto)",
+      "url": "https://github.com/jmarara-dev/wordhub.git",
       "imagen": "react.svg"
     },
 
     {
-      "nombre": "App de Tareas",
-      "descripcion": "Aplicación para gestionar tareas diarias.",
-      "url": "https://github.com/jmarara-dev/todo-app"
+      "nombre": "Rutas Gastronómicas",
+      "descripcion": "Aplicacion android para descubrir restaurantes y bares donde comer, basado en ubicación manual o geográfica.(Proyecto de instituto)",
+      "url": "https://github.com/jmarara-dev/rutas-gastronomicas.git"
     }
   ],
 
