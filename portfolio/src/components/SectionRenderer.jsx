@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 /**
  * Componente reutilizable para mostrar cualquier sección del JSON.
@@ -8,16 +8,26 @@ const DEFAULT_IMG = import.meta.env.BASE_URL + 'images/default.png';
 
 const SectionRenderer = ({ title, items }) => {
   const [startIdx, setStartIdx] = useState(0);
+  const [cardsToShow, setCardsToShow] = useState(3);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 930) {
+        setCardsToShow(1);
+      } else if (window.innerWidth <= 1055) {
+        setCardsToShow(2);
+      } else {
+        setCardsToShow(3);
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   if (!items || items.length === 0) return null;
 
-  // Calcula los 3 elementos visibles, rotando infinitamente
-  const visibleItems = items.length <= 3
+  const visibleItems = items.length <= cardsToShow
     ? items
-    : [
-        items[startIdx % items.length],
-        items[(startIdx + 1) % items.length],
-        items[(startIdx + 2) % items.length]
-      ];
+    : Array.from({ length: cardsToShow }, (_, i) => items[(startIdx + i) % items.length]);
 
   // Flecha derecha: avanza una posición
   const scroll = (dir) => {
