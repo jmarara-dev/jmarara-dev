@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 
 /**
  * Componente reutilizable para mostrar cualquier sección del JSON.
@@ -7,27 +7,44 @@ import React, { useRef } from "react";
 const DEFAULT_IMG = import.meta.env.BASE_URL + 'images/default.png';
 
 const SectionRenderer = ({ title, items }) => {
-  const listRef = useRef(null);
+  const [startIdx, setStartIdx] = useState(0);
   if (!items || items.length === 0) return null;
 
+  // Calcula los 3 elementos visibles, rotando infinitamente
+  const visibleItems = items.length <= 3
+    ? items
+    : [
+        items[startIdx % items.length],
+        items[(startIdx + 1) % items.length],
+        items[(startIdx + 2) % items.length]
+      ];
+
+  // Flecha derecha: avanza una posición
   const scroll = (dir) => {
-    if (listRef.current) {
-      const width = listRef.current.offsetWidth;
-      listRef.current.scrollBy({ left: dir * width * 0.8, behavior: 'smooth' });
-    }
+    if (items.length <= 3) return;
+    setStartIdx((prev) => {
+      if (dir === 1) {
+        return (prev + 1) % items.length;
+      } else {
+        return (prev - 1 + items.length) % items.length;
+      }
+    });
   };
 
   return (
-    <section aria-labelledby={`section-${title}`} className="section">
-      <h2 id={`section-${title}`}>{title}</h2>
-      <div style={{ position: 'relative' }}>
+    <section
+      aria-labelledby={`section-${title}`}
+      className="section section-centered"
+    >
+      <h2 id={`section-${title}`} className="section-title">{title}</h2>
+      <div className="section-carrusel">
         <button
           aria-label="Scroll left"
-          style={{ position: 'absolute', left: '-18px', top: '40%', zIndex: 2, background: '#0077b6', color: '#fff', border: 'none', borderRadius: '50%', width: 32, height: 32, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.10)' }}
+          className="section-arrow section-arrow-left"
           onClick={() => scroll(-1)}
         >&#8592;</button>
-        <ul ref={listRef} className="section-list">
-          {items.map((item, idx) => (
+        <ul className="section-list section-list-carrusel">
+          {visibleItems.map((item, idx) => (
             <li key={idx} className="section-item">
               {title === 'Proyectos' ? (
                 <>
@@ -44,7 +61,7 @@ const SectionRenderer = ({ title, items }) => {
                     <div style={{ marginBottom: '0.5rem' }}>{item.descripcion}</div>
                   )}
                   {item.url && (
-                    <a href={item.url} target="_blank" rel="noopener noreferrer" style={{ color: '#0077b6', wordBreak: 'break-all' }}>{item.url}</a>
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" style={{ color: '#0077b6', fontWeight: 'bold', display: 'inline-block', marginTop: '0.5rem' }} aria-label={`Ir al repositorio de ${item.nombre}`}>Ir al repositorio</a>
                   )}
                 </>
               ) : title === 'Certificaciones' ? (
@@ -94,7 +111,7 @@ const SectionRenderer = ({ title, items }) => {
         </ul>
         <button
           aria-label="Scroll right"
-          style={{ position: 'absolute', right: '-18px', top: '40%', zIndex: 2, background: '#0077b6', color: '#fff', border: 'none', borderRadius: '50%', width: 32, height: 32, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.10)' }}
+          className="section-arrow section-arrow-right"
           onClick={() => scroll(1)}
         >&#8594;</button>
       </div>
