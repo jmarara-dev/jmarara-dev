@@ -31,9 +31,7 @@ const SectionRenderer = ({ title, items }) => {
             <li key={idx} className="section-item">
               {title === 'Proyectos' ? (
                 <>
-                  {/* Nombre como título */}
                   <div style={{ fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '0.5rem' }}>{item.nombre}</div>
-                  {/* Imagen debajo del nombre */}
                   <img
                     src={item.imagen ? import.meta.env.BASE_URL + 'images/' + item.imagen : DEFAULT_IMG}
                     alt={item.nombre || 'Proyecto'}
@@ -42,17 +40,47 @@ const SectionRenderer = ({ title, items }) => {
                       if (e.target.src !== DEFAULT_IMG) e.target.src = DEFAULT_IMG;
                     }}
                   />
-                  {/* Descripción */}
                   {item.descripcion && (
                     <div style={{ marginBottom: '0.5rem' }}>{item.descripcion}</div>
                   )}
-                  {/* URL clickable */}
                   {item.url && (
                     <a href={item.url} target="_blank" rel="noopener noreferrer" style={{ color: '#0077b6', wordBreak: 'break-all' }}>{item.url}</a>
                   )}
                 </>
+              ) : title === 'Certificaciones' ? (
+                <>
+                  <div style={{ fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '0.5rem' }}>{item.certificacion}</div>
+                  {item.descripcion && (
+                    <div style={{ marginBottom: '0.5rem' }}>{item.descripcion}</div>
+                  )}
+                  {item.enlace && (
+                    <a href={import.meta.env.BASE_URL + item.enlace.replace(/^\//, '')} target="_blank" rel="noopener noreferrer" style={{ color: '#0077b6', wordBreak: 'break-all', fontWeight: 'bold', display: 'inline-block', marginTop: '0.5rem' }} aria-label={`Descargar ${item.certificacion}`}>Ver certificado PDF</a>
+                  )}
+                </>
+              ) : title === 'Experiencia' ? (
+                <>
+                  <div style={{ fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '0.5rem' }}>{item.empresa}</div>
+                  {item.puesto && (
+                    <div>{item.puesto}</div>
+                  )}
+                  {item.periodo && (
+                    <div style={{ color: '#555', fontSize: '0.95rem' }}>{item.periodo}</div>
+                  )}
+                  {item.descripcion && (
+                    <div style={{ marginTop: '0.5rem' }}>{item.descripcion}</div>
+                  )}
+                </>
+              ) : title === 'Estudios' ? (
+                <>
+                  <div style={{ fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '0.5rem' }}>{item.institucion}</div>
+                  {item.titulo && (
+                    <div>{item.titulo}</div>
+                  )}
+                  {item.periodo && (
+                    <div style={{ color: '#555', fontSize: '0.95rem' }}>{item.periodo}</div>
+                  )}
+                </>
               ) : (
-                // Para otras secciones, renderizado genérico
                 Object.entries(item).map(([key, value]) => (
                   key !== 'imagen' && (
                     <div key={key}>

@@ -16,6 +16,7 @@ function App() {
       <main>
         <SectionRenderer title="Experiencia" items={data.experiencia} />
         <SectionRenderer title="Estudios" items={data.estudios} />
+        <SectionRenderer title="Certificaciones" items={data.certificaciones} />
         <SectionRenderer title="Proyectos" items={data.proyectos} />
       </main>
       <footer>

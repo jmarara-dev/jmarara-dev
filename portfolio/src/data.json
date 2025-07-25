@@ -12,10 +12,31 @@
 
   "experiencia": [
     {
-      "empresa": "Tech Solutions",
-      "puesto": "Frontend Developer",
-      "periodo": "2022 - Presente",
-      "descripcion": "Desarrollo de aplicaciones web modernas y accesibles."
+      "empresa": "The Superdriver IOT Sotucions, La Carolina",
+      "puesto": "Técnico Informático(F.C.T)",
+      "periodo": "2021/09 -2021/12",
+      "descripcion": "Mantenimiento de equipos informáticos, gestión de redes y soporte técnico a usuarios. Aprendí a resolver problemas técnicos de manera eficiente y a trabajar en equipo para mejorar la infraestructura tecnológica de la empresa."
+    },
+
+    {
+      "empresa": "Ayto. Bailén",
+      "puesto": "Técnico Informático",
+      "periodo": "2022/02 – 2022/07",
+      "descripcion": "Mantenimiento de equipos informáticos, gestión, instalación y mapeo de redes y soporte técnico a usuarios."
+    },
+
+    {
+      "empresa": "Pulsia IT Solutions S.L.",
+      "puesto": "Administrador de Sistemas",
+      "periodo": "2023/04 – 2023/07",
+      "descripcion": "Sustitución de equipos informaticos, copias de seguridad de datos y reestablecimiento de datos en el nuevo equipo, configuración de aplicaciones privadas conexiones con equipos al dominio."
+    },
+
+    {
+      "empresa": "Universidad De Jaén",
+      "puesto": "Desarrollador de Aplicaciones(F.C.T)",
+      "periodo": "2025/03 – 2025/06",
+      "descripcion": "Participación en un proyecto de una interfaz de realidad virtual para recomendación de peliculas, utilizando Unity y C#."
     }
   ],
 
@@ -23,9 +44,47 @@
 
   "estudios": [
     {
-      "institucion": "Universidad Nacional",
-      "titulo": "Ingeniería en Sistemas",
-      "periodo": "2018 - 2022"
+      "institucion": "Ministerio de Educación(I.E.S. María Bellido)",
+      "titulo": "E.S.O.(pruebas libres para la obtención del título para personas mayores de 18 años)",
+      "periodo": "2018"
+    },
+
+    {
+      "institucion": "IES Oretania",
+      "titulo": "Sistemas Microinformáticos y Redes",
+      "periodo": "2018 - 2021"
+    },
+
+    {
+      "institucion": "IES Oretania",
+      "titulo": "Desarrollo de Aplicaciones Multiplataforma",
+      "periodo": "2023 - 2025"
+    }
+  ],
+
+  "certificaciones": [
+    {
+      "certificacion": "shell de linux",
+      "descripcion": "Curso de introduccion a la shell de linux, comandos basicos y su uso.",
+      "enlace": "/document/shell_linux.pdf"
+    },
+
+    {
+      "certificacion": "Linux desde cero",
+      "descripcion": "Curso de introducción a Linux, desde la instalación hasta la administración básica del sistema.",
+      "enlace": "/document/linux_desde_cero.pdf"
+    },
+
+    {
+      "certificacion": "Curso de Unity",
+      "descripcion": "Introducción a la interfaz de Unity, creación de proyectos y uso básico de la plataforma.",
+      "enlace": "/document/curso_unity.pdf"
+    },
+
+    {
+      "certificacion": "Unity 5, desarrollo de videojuegos 2D",
+      "descripcion": "Introduccion al desarrollo de videojuegos 2D con Unity 5, cubriendo conceptos básicos y técnicas de programación.",
+      "enlace": "/document/curso_unity_5.pdf"
     }
   ],
 
